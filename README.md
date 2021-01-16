@@ -22,7 +22,7 @@ Optional you can set the greetings in this file
 
 Install dependencies and run it
     
-    npm build
+    npm i
     npm start
 
 On command `/start` in Telegram the bot with token `BOT_TOKEN_0` will say `GREETING_0`.
