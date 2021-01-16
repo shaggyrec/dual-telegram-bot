@@ -1,6 +1,6 @@
 const Bot = require('./Bot');
 
-const { BOT_TOKEN_0, BOT_TOKEN_1 } = process.env;
+const { BOT_TOKEN_0, BOT_TOKEN_1, GREETING_0, GREETING_1 } = process.env;
 const consoleErrorBg = '\x1b[41m';
 
 if (!BOT_TOKEN_0 || !BOT_TOKEN_1) {
@@ -15,8 +15,8 @@ function errorHandler ({ response: { description } }) {
 
 (new Bot(BOT_TOKEN_0))
     .onError(errorHandler)
-    .setGreeting('Hello! I am the first bot.');
+    .setGreeting(GREETING_0);
 
 (new Bot(BOT_TOKEN_1))
     .onError(errorHandler)
-    .setGreeting('Ahoy! I am the second bot.');
+    .setGreeting(GREETING_1);
