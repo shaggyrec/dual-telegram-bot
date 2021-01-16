@@ -1,0 +1,24 @@
+{
+  "name": "dual-telegram-bot",
+  "version": "1.0.0",
+  "description": "2 telegram bots on one nodejs instance",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node -r dotenv/config src/index.js",
+    "test": "npm run lint",
+    "lint": "eslint 'src/**/*.js'"
+  },
+  "author": "Alexander Shogenov <i@shagg.ru>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "telegraf": "^4.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0"
+  }
+}
