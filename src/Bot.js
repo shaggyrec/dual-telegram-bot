@@ -4,11 +4,15 @@ class Bot {
     constructor (token) {
         this.bot = new Telegraf(token);
         this.greeting = 'Hi';
-        this.init();
     }
 
     setGreeting (greeting) {
         this.greeting = greeting;
+        return this;
+    }
+
+    onStart (handler) {
+        this.startHandler = handler;
         return this;
     }
 
@@ -17,11 +21,9 @@ class Bot {
         return this;
     }
 
-    init () {
+    run () {
         this.bot.start((ctx) => ctx.reply(this.greeting));
-        this.bot.launch().then(() => {
-            console.log('\x1b[42m', 'Bot launched', '\x1b[0m');
-        }).catch(err => this.errorHandler(err));
+        this.bot.launch().then(() => this.startHandler()).catch(err => this.errorHandler(err));
     }
 }
 
